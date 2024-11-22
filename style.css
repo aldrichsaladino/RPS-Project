@@ -1,0 +1,167 @@
+/*style.css */
+
+
+body {
+ display: flex;
+ flex-direction: column;
+ background-color: #252d35;
+ align-items: center;
+ color: white;
+ font-family: 'Press Start 2P', cursive, Arial, sans-serif;
+ padding: 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    color: #f0db4f;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.scoreboard-container {
+    padding: 30px;
+    text-align: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.roundresult {
+    font-size: 20px;
+}
+
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5px;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: #f0db4f;
+}
+
+.choice-display {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 50px;
+    font-size: 100px;
+}
+
+#vs-text {
+    font-size: 30px;
+    display: inline-block;
+    transition: color 0.3s ease; /*this will allow the vs text to ease in with color change depending on the result*/
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+.choice {
+    background-color: #3a3f47;
+    padding: 100px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: transform 0.5s, background-color 0.5s;
+    border-radius: 10px;
+}
+
+.choice:hover {
+    transform: scale(1.15);
+    background-color: #f0db4f;
+}
+
+.modal {
+    width: 100%;
+    margin-right: 10px;
+    align-items: center;
+    padding: 10px;
+    background: #54565a;
+    border: 2px solid;
+    border-color: white;
+    border: 5px;
+    display: none; /*it will not be displayed till after via js and then hidden again */
+}
+
+
+#endMessage {
+    color: white;
+    font-size: 14px;
+    font-family: 'Press Start 2P', cursive, Arial, sans-serif;
+
+}
+
+#restartButton {
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive, Arial, sans-serif;
+    background-color: #f0db4f;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: black;
+    transition: background-color 0.3s ease;
+}
+
+#restartButton:hover {
+    background-color: #f0db4f; /* Change color on hover */
+    color: black;
+}
+
+#endgame-modal {
+    display: none;
+    position: fixed;
+    justify-content: center;
+    top: 50%;
+    left: 50%; /*This will make it specifically in the center*/
+    width: 400px;
+    transform: translate(-50%,-50% ); /*Dead center*/
+    z-index: 1001; /* Ensure it is overlayed above other elements */
+    background-color: #54565a;
+    border: 5px solid #f0db4f;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Add a shadow for better visibility */
+}
+
+#endgame-modal.show {
+    display: block; /* Ensure it shows when triggered */
+    animation: pop-in 0.5s ease-out;
+}
+
+@keyframes pop-in {
+    0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+    z-index: 1000; /* Just below the modal */
+}
+
+.modal-overlay.show {
+    z-index: 1001;
+    display: block; /* Show when the modal is displayed */
+}
