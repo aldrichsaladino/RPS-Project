@@ -105,6 +105,9 @@ function restartGame() {
     var modal = document.getElementById("endgame-modal");
     modal.classList.remove("show");
     modal.style.display ="none"
+
+    var overlay = document.getElementById("modal-overlay")
+    overlay.classList.remove("show")
 }
 
 function triggerConfetti() {
