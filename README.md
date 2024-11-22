@@ -37,6 +37,7 @@ This is a modern web-based implementation of the classic *Rock-Paper-Scissors* g
 2. Open the index.html file in a modern browser (e.g., Chrome, Firefox, Edge).
 3. Start playing by selecting Rock, Paper, or Scissors! 🎉
 
+The other option you may do is run it directly through Github Pages: https://aldrichsaladino.github.io/RPS-Project/
 ## Example Output 🖥️
 ```
 Game Start:
